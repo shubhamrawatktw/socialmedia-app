@@ -54,5 +54,5 @@ module.exports.create = (req,res)=>{
 
 //  sign in and create the session for user
 module.exports.createSession = (req,res)=>{
-
+return res.redirect("/users/profile")
 }
