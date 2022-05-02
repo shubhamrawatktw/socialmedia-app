@@ -1,7 +1,11 @@
 footer{
-    height: 12vh;
+    height: 10vh;
+    width: 100%;
     background-color: lightseagreen;
     display: flex;
+    position: absolute;
+    bottom: 0;
+    
     .copyright{
         margin: 0px 15px;
         p{
