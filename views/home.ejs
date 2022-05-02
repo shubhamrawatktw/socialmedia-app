@@ -1,4 +1,20 @@
- <link rel="stylesheet" href="/css/signup.css">
-    
-    <h1>this is home page of <%= title%></h1>
-   
+<link rel="stylesheet" href="/css/home.css" />
+<body>
+  <main>
+    <h1>Home / <%= title%></h1>
+    <section id="feed-posts">
+      <h3>Post</h3>
+      <form action="/create-post" id="new-post-form" method="post">
+        <textarea
+          name="content"
+          cols="30"
+          rows="3"
+          placeholder="write your post..."
+        ></textarea>
+        <input type="submit" value="Post" />
+      </form>
+    </section>
+
+
+  </main>
+</body>

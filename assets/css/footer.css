@@ -1,0 +1,23 @@
+footer {
+  height: 12vh;
+  background-color: lightseagreen;
+  display: flex;
+}
+
+footer .copyright {
+  margin: 0px 15px;
+}
+
+footer .copyright p {
+  font-size: 1rem;
+  color: whitesmoke;
+}
+
+footer .tags {
+  margin: 0px 15px;
+}
+
+footer .tags p {
+  font-size: 1rem;
+  color: whitesmoke;
+}
