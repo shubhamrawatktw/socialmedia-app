@@ -1,4 +1,6 @@
 const Post = require("../models/post")
+const User = require("../models/users")
+
 
 module.exports.home = (req, res) => {
   // console.log(req.body, "body");
@@ -24,13 +26,14 @@ Post.find({})
   }
 })
 .exec((err,posts)=>{
-  if (err) {
-    console.log("error in finding user/populate");
-    return 
-  }
-  return res.render("home",{
-    title:"Fakebook | Home",
-    posts:posts
+  
+  User.find({},(err,users)=>{
+    return res.render("home",{
+      title:"Fakebook | Home",
+      posts:posts,
+      all_users: users
+    })
+    
   })
 })
 }
