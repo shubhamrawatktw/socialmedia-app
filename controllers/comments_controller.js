@@ -10,13 +10,14 @@ module.exports.create = async (req, res) => {
         post: req.body.post,
         user: req.user._id,
       });
+      req.flash("success","Comment published!")
 
       post.comments.push(comment);
       post.save();
       return res.redirect("/");
     }
   } catch (error) {
-    console.log("error in creating comment", error);
+    req.flash("error",error)
   }
 };
 
@@ -26,6 +27,7 @@ module.exports.destroy = async (req, res) => {
         if (comment.user == req.user.id) {
           let postId = comment.post;
           comment.remove();
+          req.flash("success","Comment deleted")
           let post = await Post.findByIdAndUpdate(postId, {
             $pull: { comments: req.params.id },
           });
