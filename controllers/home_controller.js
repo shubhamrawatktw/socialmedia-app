@@ -16,7 +16,7 @@ module.exports.home = async (req, res) => {
     let users = await User.find({});
 
     return res.render("home", {
-      title: "Fakebook | Home",
+      title: "laughTale | Home",
       posts: posts,
       all_users: users,
     });
