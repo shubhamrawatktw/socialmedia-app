@@ -2,8 +2,7 @@ const passport = require("passport");
 const googleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const crypto = require("crypto");
 const User = require("../models/users");
-const { access } = require("fs");
-const { profile } = require("console");
+
 
 passport.use(
   new googleStrategy(
@@ -22,7 +21,7 @@ passport.use(
           console.log("error in google strategy passport", err);
           return;
         }
-        console.log(profile);
+        console.log(accessToken,refreshToken);
         if (user) {
           return done(null, user);
         } else {
