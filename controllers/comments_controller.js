@@ -12,13 +12,13 @@ module.exports.create = async (req, res) => {
         user: req.user._id,
       });
       let newc = await comment.populate("user" , "name email")
-      console.log(newc);
+      // console.log(newc);
     
       req.flash("success","Comment published!")
 
       post.comments.push(comment);
       post.save();
-      // comment = await comment.populate('user', 'name email').execPopulate();
+   
   
       commentsMailer.newComment(newc)
       return res.redirect("/");
